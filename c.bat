@@ -10,10 +10,10 @@ set "listArg=%2"
 
 REM print help
 if "%searchStr%"=="?" (
-	echo welcome to __TERMINAL_RACER__
-	echo  "c mydir" for cd into the first directory at a string contains match 
-	echo  "c"       for cd..
-	echo  "c mydir l" for listing all matches at string contains and prompting choice by index
+	echo __BATMOBILE__ 
+	echo  "c mydir"     cd into the first directory with string contains match 
+	echo  "c"           cd..
+	echo  "c mydir l"   for when it gets the search wrong and there are multiple matches - listing all matches at string contains and remembers your choice within the current terminal session and next time you use "c mydir" it will use the directory at the index you chose last time 
 	goto :EOF
 )
 
@@ -37,6 +37,12 @@ set "found=0"
 
 REM Loop through directories in the current directory
 if "%listArg%"=="" (
+	if DEFINED %CD%%searchStr%% (
+	        set "found=1"
+	        endlocal
+			for /f "tokens=2 delims==" %%a in ('set %CD%%searchStr%') do cd %%a
+	        goto :EOF
+	)
 	for /d %%D in (*) do (
 	    set "dirName=%%D"
 	    if  not "!dirName:%searchStr%=!" == "!dirName!" (
@@ -68,7 +74,8 @@ if "%listArg%"=="" (
             set /a count+=1
 			if !count!==!choice! (
 	        	set "found=1"
-	        	endlocal
+	        	endlocal 
+				set %CD%%searchStr%=%%D
 	        	cd %%D
 	        	goto :EOF
 			)
@@ -82,3 +89,5 @@ if "%found%"=="0" (
     echo No directory contains string '%searchStr%'
 )
 
+REM at the key currentdir + search - save the dir to cd
+REM when search and if direct (no l) check the variable
