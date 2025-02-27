@@ -4,16 +4,22 @@ a bat script that turbocharges terminal navigation and replaces all needs for cd
 Comparison:
 go from current dir to domaintests
 
+```plaintext
 root
-+-- source
-    +-- repos
-        +-- foo
-        +-- bar
-            +-- app
-            +-- apptests
-            +-- domain
-            +-- domaintests  <--
+├── source
+│   └── repos
+│       ├── foo
+│       ├── bar
+│       │   ├── app
+│       │   ├── apptests
+│       │   ├── domain
+│       │   └── domaintests  <--
+```
 
+<div style="display: flex; justify-content: space-between;">
+  <img src="" alt="Description" style="width: 48%;">
+  <img src="" alt="Description" style="width: 48%;">
+</div>
 
 ## todos
 - [X] Persist list choice for next resolve
