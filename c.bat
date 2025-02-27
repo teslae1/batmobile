@@ -6,14 +6,15 @@ REM Get the search arg
 set "searchStr=%1"
 
 REM get the list arg
-set "listArg=%2"
+set "secondArg=%2"
 
 REM print help
 if "%searchStr%"=="?" (
 	echo __BATMOBILE__ 
-	echo  "c mydir"     cd into the first directory with string contains match 
-	echo  "c"           cd..
-	echo  "c mydir l"   for when it gets the search wrong and there are multiple matches - listing all matches at string contains and remembers your choice within the current terminal session and next time you use "c mydir" it will use the directory at the index you chose last time 
+	echo --     "c mydir"     cd into the first directory with string contains match 
+	echo --     "c my dir"    cd into the first directory with string contains match for both arguments
+	echo --     "c"           cd..
+	echo --     "c mydir -l"  for when it gets the search wrong and there are multiple matches - listing all matches at string contains and remembers your choice within the current terminal session and next time you use "c mydir" it will use the directory at the index you chose last time 
 	goto :EOF
 )
 
@@ -32,11 +33,10 @@ echo %searchStr% | find "/">null && (
 	goto :EOF
 )
 
-REM Initialize found flag
 set "found=0"
 
-REM Loop through directories in the current directory
-if "%listArg%"=="" (
+REM handle normal case
+if "%secondArg%"=="" (
 	if DEFINED %CD%%searchStr%% (
 	        set "found=1"
 	        endlocal
@@ -53,7 +53,8 @@ if "%listArg%"=="" (
 	    )
 
 	)
-) else (
+REM handle list choice
+) else if "%secondArg%"=="-l" (
    set "count=0"
     for /d %%D in (*) do (
         set "dirName=%%D"
@@ -83,6 +84,19 @@ if "%listArg%"=="" (
     )
 	echo invalid index choice 
    	goto :EOF
+REM handle multi string search
+) else (
+	for /d %%D in (*) do (
+	    set "dirName=%%D"
+	    if not "!dirName:%searchStr%=!" == "!dirName!"  (
+			if not  "!dirName:%secondArg%=!" == "!dirName!"  (
+	        	set "found=1"
+	        	endlocal
+	        	cd %%D
+	        	goto :EOF
+	    )
+	)
+	)
 )
  
 if "%found%"=="0" (
