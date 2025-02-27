@@ -20,7 +20,7 @@ root
 
 using the batmobile (c.bat) script:
 ![using batmobile c.bat script](./gifs/batmobile_navigate.gif)
-using cd
+vs using cd:
 ![using cd](./gifs/cd_navigate.gif)
 
 ## Replacing cd.. with c
