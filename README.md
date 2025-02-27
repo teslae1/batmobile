@@ -8,8 +8,8 @@ go from current dir to domaintests
 root
 ├── source
 │   └── repos
-│       ├── foo
-│       ├── bar
+│       ├── my_foo_dir
+│       ├── my_bar_dir
 │       │   ├── app
 │       │   ├── apptests
 │       │   ├── domain
@@ -26,10 +26,13 @@ root
 - [X] multi string search support
  if the second input is not "-l" also do a string contains search on that
   - [X] update documentation
+- [X] fix null file bug
+ repro: c into dir - src dir now has weird file
 
 - [-] Cool documentation
   - [-] comparison (use foobar thing)
     - [-] comparison multi string support
+  - [ ] new vid with more intricate paths + zoom
   - [ ] comparison go back
   - [ ] persist choice on multiple match in terminal session
 

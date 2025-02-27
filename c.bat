@@ -27,7 +27,7 @@ if "%searchStr%"=="" (
 )
 
 REM if was argument with slash in just cd
-echo %searchStr% | find "/">null && (
+if not "!searchStr:/=!" == "!searchStr!" ( 
     endlocal
 	cd %searchStr%
 	goto :EOF
