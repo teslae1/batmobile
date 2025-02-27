@@ -21,6 +21,9 @@ root
   <img src="./gifs/cd_navigate.gif" alt="Description" style="width: 48%;">
 </div>
 
+![using batmobile c.bat script](./gifs/batmobile_navigate.gif)
+![using cd](./gifs/batmobile_navigate.gif)
+
 ## todos
 - [X] Persist list choice for next resolve
 - [X] multi string search support
