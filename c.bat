@@ -2,13 +2,10 @@
 @echo off
 setlocal enabledelayedexpansion
 
-REM Get the search arg
 set "searchStr=%1"
 
-REM get the list arg
 set "secondArg=%2"
 
-REM print help
 if "%searchStr%"=="?" (
 	echo __BATMOBILE__ 
 	echo --     "c mydir"     cd into the first directory with string contains match 
@@ -103,5 +100,3 @@ if "%found%"=="0" (
     echo No directory contains string '%searchStr%'
 )
 
-REM at the key currentdir + search - save the dir to cd
-REM when search and if direct (no l) check the variable
