@@ -22,7 +22,7 @@ root
 </div>
 
 ![using batmobile c.bat script](./gifs/batmobile_navigate.gif)
-![using cd](./gifs/batmobile_navigate.gif)
+![using cd](./gifs/cd_navigate.gif)
 
 ## todos
 - [X] Persist list choice for next resolve
