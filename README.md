@@ -18,8 +18,10 @@ root
 │       │   └── domaintests  <--
 ```
 
-using the batmobile (c.bat) script:
+Using the batmobile (c.bat) script:
 ![using batmobile c.bat script](./gifs/batmobile_navigate.gif)
+
+Using cd:
 ![using cd](./gifs/cd_navigate.gif)
 
 ## Replacing cd.. with c
