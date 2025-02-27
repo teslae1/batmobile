@@ -1,5 +1,7 @@
 # batmobile
-a bat script that turbocharges terminal navigation and replaces all needs for cd, cd.. and cd + TAB until match
+a bat script that turbocharges windows terminal navigation and replaces all needs for cd, cd.. and cd + TAB until match
+
+## Replacing cd with c
 
 Comparison:
 go from current dir to domaintests
@@ -16,13 +18,16 @@ root
 │       │   └── domaintests  <--
 ```
 
-<div style="display: flex; justify-content: space-between;">
-  <img src="./gifs/batmobile_navigate.gif" alt="Description" style="width: 48%;">
-  <img src="./gifs/cd_navigate.gif" alt="Description" style="width: 48%;">
-</div>
-
+using the batmobile (c.bat) script:
 ![using batmobile c.bat script](./gifs/batmobile_navigate.gif)
+using cd
 ![using cd](./gifs/cd_navigate.gif)
+
+## Replacing cd.. with c
+Calling c without any arguments is the equivalent of calling cd..
+
+## Replacing cd + TAB on multiple matches
+using the "-l" command allows for choosing a match for a search that will then be remembered until the terminal session is ended
 
 ## todos
 - [X] Persist list choice for next resolve
