@@ -17,8 +17,8 @@ root
 ```
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="" alt="Description" style="width: 48%;">
-  <img src="" alt="Description" style="width: 48%;">
+  <img src="./gifs/batmobile_navigate.gif" alt="Description" style="width: 48%;">
+  <img src="./gifs/cd_navigate.gif" alt="Description" style="width: 48%;">
 </div>
 
 ## todos
@@ -30,9 +30,11 @@ root
  repro: c into dir - src dir now has weird file
 
 - [-] Cool documentation
-  - [-] comparison (use foobar thing)
-    - [-] comparison multi string support
-  - [ ] new vid with more intricate paths + zoom
+  - [X] comparison (use foobar thing)
+    - [X] comparison multi string support
+  - [X] new vid with more intricate paths + zoom
+  - [X] make them exactly the same length time
+
   - [ ] comparison go back
   - [ ] persist choice on multiple match in terminal session
 
