@@ -29,6 +29,7 @@ Calling c without any arguments is the equivalent of calling cd..
 
 ## Replacing cd + TAB on multiple matches
 using the "-l" command allows for choosing a match for a search that will then be remembered until the terminal session is ended
+![](./gifs/batmobile_persistent.gif)
 
 ## todos
 - [X] Persist list choice for next resolve
