@@ -113,5 +113,3 @@ if "%found%"=="0" (
     echo No directory contains string '%searchStr%'
 )
 
-REM at the key currentdir + search - save the dir to cd
-REM when search and if direct (no l) check the variable
