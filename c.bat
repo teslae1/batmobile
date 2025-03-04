@@ -37,7 +37,7 @@ set "found=0"
 
 REM handle normal case
 if "%secondArg%"=="" (
-	if DEFINED %CD%%searchStr%% (
+	if DEFINED "%CD%%searchStr%%" (
 	        set "found=1"
 	        endlocal
 			for /f "tokens=2 delims==" %%a in ('set %CD%%searchStr%') do cd %%a
