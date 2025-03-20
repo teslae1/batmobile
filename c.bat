@@ -44,7 +44,6 @@ if "%secondArg%"=="" (
 			for /f "tokens=2 delims==" %%a in ('set %CD%%searchStr%') do cd %%a
 	        goto :EOF
 	) else if "!currentCombinedPathAndSearch!" == "!currentCombinedPathAndSearch: =!" (
-		echo has no space in path
 		 if DEFINED !currentCombinedPathAndSearch! (
 	         set "found=1"
 	         endlocal
