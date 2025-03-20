@@ -37,11 +37,20 @@ set "found=0"
 
 REM handle normal case
 if "%secondArg%"=="" (
-	if DEFINED "%CD%%searchStr%%" (
+	set "currentCombinedPathAndSearch=%CD%%searchStr%%"
+	if DEFINED "!currentCombinedPathAndSearch!" (
 	        set "found=1"
 	        endlocal
 			for /f "tokens=2 delims==" %%a in ('set %CD%%searchStr%') do cd %%a
 	        goto :EOF
+	) else if "!currentCombinedPathAndSearch!" == "!currentCombinedPathAndSearch: =!" (
+		echo has no space in path
+		 if DEFINED !currentCombinedPathAndSearch! (
+	         set "found=1"
+	         endlocal
+		 	for /f "tokens=2 delims==" %%a in ('set %CD%%searchStr%') do cd %%a
+	         goto :EOF
+		 )
 	)
 	REM first check for exact match - has highest priority
 	for /d %%D in (*) do (
